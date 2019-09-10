@@ -1,0 +1,2 @@
+objectifier==1.4.0
+pika==0.13.0

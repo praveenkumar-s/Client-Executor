@@ -1,7 +1,7 @@
 import pika
 import json
 import sys
-from uuid import uuid1
+from uuid import uuid4
 from datetime import datetime
 import Queries
 import startup
@@ -13,7 +13,7 @@ connection = None
 
 
 def callback(ch, method, properties, body):
-    id = str(uuid1())
+    id = str(uuid4())
     status=DB.execute_query_w(Queries.INSERT_MESSAGE, (id , body , 'NEW', datetime.now() , ""))
     comm.acknowlege(config.RMQ.ack, {'id':id,"status":status}, config)
     logger.debug("recived %r"%body)
