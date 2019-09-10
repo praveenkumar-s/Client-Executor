@@ -22,7 +22,7 @@ def callback(ch, method, properties, body):
 if __name__ == "__main__":
     
     config,DB,credentials,logger = startup.run()
-    connection = pika.BlockingConnection(pika.ConnectionParameters('10.2.1.9', 5672 ,'/',credentials))
+    connection = pika.BlockingConnection(pika.ConnectionParameters(config.RMQ.host, config.RMQ.port ,'/',credentials))
     channel = connection.channel()
     channel.basic_consume(queue=config.RMQ.queue,
                         auto_ack=True,
