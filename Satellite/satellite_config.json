@@ -1,0 +1,12 @@
+{
+    "database":"store.db",
+    "RMQ":{
+        "host" : "10.2.1.9",
+        "port":5672,
+        "durable":true,        
+        "user":"praveen",
+        "password":"abc@123",
+        "queue":"helico",
+        "ack":"status"       
+    }
+}

@@ -1,5 +1,5 @@
 import sqlite3
-
+import sys
 class file_db:
     def __init__(self, db_name):
         self.db_name = db_name
@@ -14,6 +14,7 @@ class file_db:
             return True
         except:
             #log
+            print(sys.exc_info())
             return False
     
 

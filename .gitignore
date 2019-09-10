@@ -1,0 +1,15 @@
+.vscode/settings.json
+Satellite/.vscode/settings.json
+Satellite/comm.pyc
+Satellite/datastore.pyc
+Satellite/Queries.pyc
+Satellite/satlog.pyc
+Satellite/startup.pyc
+Satellite/__pycache__/comm.cpython-36.pyc
+Satellite/__pycache__/datastore.cpython-36.pyc
+Satellite/__pycache__/Queries.cpython-36.pyc
+Satellite/__pycache__/satlog.cpython-36.pyc
+Satellite/__pycache__/startup.cpython-36.pyc
+__pycache__/datastore.cpython-36.pyc
+__pycache__/Queries.cpython-36.pyc
+__pycache__/satlog.cpython-36.pyc

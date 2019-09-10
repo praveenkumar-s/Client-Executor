@@ -1,0 +1,1 @@
+INSERT_MESSAGE = "insert into queue (ID , DATA , STATUS, CREATED_AT , NOTES) values (?,?,?,?,?)"

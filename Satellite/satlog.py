@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 import logging
 import sys
 from logging.handlers import TimedRotatingFileHandler
