@@ -8,7 +8,7 @@ connection = pika.BlockingConnection(pika.ConnectionParameters('10.2.1.13', 5672
 channel = connection.channel()
 channel.queue_declare(queue='helico', durable=True)
 
-prep_job = model.prepare_job("get_hostname", "hostname")
+prep_job = model.prepare_job("get_hostname", "python scratchcode.py", command_timeout=10)
 
 channel.basic_publish(exchange='',
                       routing_key='helico',

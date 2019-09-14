@@ -1,4 +1,4 @@
 {
-    "db_queue_path": "../Satellite/store.db",
+    "db_queue_path": "./Satellite/store.db",
     "poll_interval":5
 }

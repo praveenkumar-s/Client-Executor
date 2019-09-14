@@ -15,7 +15,7 @@ connection = None
 def callback(ch, method, properties, body):
     id = str(uuid4())
     body_json = json.loads(body)
-    status=DB.execute_query_w(Queries.INSERT_MESSAGE, (id , body , 'NEW', datetime.now() , "",body_json['conmand']['time_out']))
+    status=DB.execute_query_w(Queries.INSERT_MESSAGE, (id , body , 'NEW', datetime.now() , "",body_json['command']['time_out']))
     comm.acknowlege(config.RMQ.ack, {'id':id,"status":status}, config)
     logger.debug("recived %r"%body)
 
