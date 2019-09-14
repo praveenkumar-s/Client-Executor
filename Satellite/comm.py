@@ -9,7 +9,7 @@ def acknowlege(queue,message,config):
         "id":message["id"],
         "status":message["status"]
     }
-    connection = pika.BlockingConnection(pika.ConnectionParameters('10.2.1.9', 5672 ,'/',pika.PlainCredentials(config.RMQ.user , config.RMQ.password)))
+    connection = pika.BlockingConnection(pika.ConnectionParameters(config.RMQ.host, config.RMQ.port ,'/',pika.PlainCredentials(config.RMQ.user , config.RMQ.password)))
     channel = connection.channel()
     channel.queue_declare(queue=queue, durable=True)
     channel.basic_publish(exchange='',

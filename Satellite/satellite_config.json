@@ -1,7 +1,7 @@
 {
     "database":"store.db",
     "RMQ":{
-        "host" : "10.2.1.9",
+        "host" : "10.2.1.13",
         "port":5672,
         "durable":true,        
         "user":"praveen",

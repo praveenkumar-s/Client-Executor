@@ -1,1 +1,1 @@
-INSERT_MESSAGE = "insert into queue (ID , DATA , STATUS, CREATED_AT , NOTES) values (?,?,?,?,?)"
+INSERT_MESSAGE = "insert into queue (ID , DATA , STATUS, CREATED_AT , NOTES, TIME_OUT) values (?,?,?,?,?,?)"

@@ -1,21 +1,17 @@
 #!/usr/bin/env python
 import pika
 import json
+import model
 
 credentials = pika.PlainCredentials('praveen','abc@123')
-connection = pika.BlockingConnection(pika.ConnectionParameters('10.2.1.9', 5672 ,'/',credentials))
+connection = pika.BlockingConnection(pika.ConnectionParameters('10.2.1.13', 5672 ,'/',credentials))
 channel = connection.channel()
 channel.queue_declare(queue='helico', durable=True)
 
-test_data ={
-    "job_name":"CopyBuildPanamera",
-    "execution_command":"robo copy do this",
-    "Report_to":"channel",
-    "report interval":""
-}
+prep_job = model.prepare_job("get_hostname", "hostname")
 
 channel.basic_publish(exchange='',
                       routing_key='helico',
-                      body=json.dumps(test_data))
+                      body=prep_job)
 print(" [x] Sent Message")
 connection.close()
